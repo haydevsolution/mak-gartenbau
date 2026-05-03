@@ -418,6 +418,102 @@ body[data-palette="sage"] { --bg: #1a251a; --bg-2: #1f2b1f; --surface: #26332a; 
 body[data-palette="forest"] { --bg: #0f1a10; --bg-2: #152218; --surface: #1b2a1e; --accent: #8ba872; --accent-2: #c5d0a8; }
 body[data-palette="earth"] { --bg: #1c1a15; --bg-2: #242019; --surface: #2a261e; --accent: #c4a56a; --accent-2: #e2c995; }
 
+/* ===== MOBILE OPTIMIERUNGEN ===== */
+@media (max-width: 720px) {
+  /* Inline-Grids zwingen alle in 1 Spalte */
+  .grid[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  /* Section padding deutlich reduzieren */
+  .section { padding: 64px 0 !important; }
+  .container { padding: 0 20px; }
+
+  /* Typografie für mobile lesbarer */
+  h1 { font-size: clamp(40px, 11vw, 56px) !important; line-height: 1.02 !important; }
+  h2 { font-size: clamp(28px, 7.5vw, 40px) !important; line-height: 1.08 !important; }
+  h3 { font-size: 20px !important; }
+  p  { font-size: 15px; line-height: 1.6; }
+
+  /* HERO Anpassungen — passt jetzt zuverlässig in den Screen */
+  .hero { min-height: auto; }
+  .hero-inner { padding: 120px 20px 56px !important; }
+  .hero-meta {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+    margin-top: 36px !important;
+    padding-top: 24px !important;
+    align-items: start !important;
+  }
+  .hero-meta-item { font-size: 10px; }
+  .hero-meta-item strong { font-size: 18px; margin-top: 6px; }
+
+  /* PAGE HERO (Unterseiten) */
+  .page-hero { min-height: 56vh; padding-bottom: 56px; }
+  .page-hero-inner { padding: 110px 20px 0 !important; }
+  .page-hero h1 { font-size: clamp(44px, 12vw, 64px) !important; }
+
+  /* Buttons full-width damit nichts seitlich abgeschnitten wird */
+  .hero .btn,
+  .section .btn,
+  .page-hero .btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 22px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+
+  /* Brand & Nav */
+  .brand-logo { height: 52px; }
+  .nav { padding: 12px 16px; }
+  .nav.scrolled { padding: 10px 16px; }
+  .nav-right { gap: 12px; }
+  .lang-toggle { font-size: 10px; }
+  .lang-toggle button { padding: 6px 4px; }
+
+  /* Footer */
+  .footer { padding: 64px 0 32px; margin-top: 64px; }
+  .footer-grid { gap: 32px !important; margin-bottom: 48px; }
+  .footer-logo img { height: 80px; }
+  .footer p { font-size: 14px; }
+  .footer-bottom { font-size: 11px; line-height: 1.6; }
+
+  /* Marquee kleiner halten */
+  .marquee { padding: 24px 0; gap: 56px; }
+  .marquee-track { gap: 56px; }
+  .marquee-track span { font-size: 28px; gap: 56px; }
+
+  /* Tweaks Panel auf Mobile ausblenden */
+  .tweaks-panel { display: none !important; }
+
+  /* Form-Inputs: 16px verhindert iOS-Auto-Zoom */
+  input, textarea, select { font-size: 16px !important; }
+
+  /* Service-Reihen (leistungen.html) */
+  .service-row { padding: 32px 0 !important; }
+  .service-row .service-img { aspect-ratio: 16/10; }
+
+  /* Wort-Trennung verhindert horizontales Scrollen */
+  body { word-break: break-word; overflow-wrap: anywhere; }
+}
+
+/* Sehr kleine Screens (iPhone SE u.ä.) */
+@media (max-width: 380px) {
+  h1 { font-size: 38px !important; }
+  h2 { font-size: 26px !important; }
+  .brand-logo { height: 44px; }
+  .hero-meta { grid-template-columns: 1fr; gap: 0; }
+  .hero-meta-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-meta-item:last-child { border-bottom: 0; }
+  .hero-inner { padding-top: 100px !important; }
+  .marquee-track span { font-size: 24px; }
+}
+
 </style>
 </head>
 <body data-screen-label="01 Home">
@@ -500,47 +596,12 @@ body[data-palette="earth"] { --bg: #1c1a15; --bg-2: #242019; --surface: #2a261e;
   </div>
 </section>
 
-<!-- DISCIPLINE -->
-<section class="section" style="padding-top: 0;" data-screen-label="Disziplin">
-  <div class="container">
-    <div class="grid reveal" style="grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 80px;">
-      <div class="img-wrap" style="aspect-ratio: 4/3;">
-        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80" alt="">
-      </div>
-      <div class="img-wrap" style="aspect-ratio: 4/3;">
-        <img src="https://images.unsplash.com/photo-1611843467160-25afb8df1074?auto=format&fit=crop&w=1200&q=80" alt="">
-      </div>
-    </div>
-
-    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;">
-      <div class="reveal">
-        <div class="eyebrow" data-de="02 — Disziplin" data-en="02 — Discipline">02 — Disziplin</div>
-        <h2 style="margin-top:24px;"
-            data-de="Exklusive Außenbereiche,<br/>ganzheitlich gedacht."
-            data-en="Exclusive outdoor spaces,<br/>thought as a whole.">
-          Exklusive Außenbereiche,<br>ganzheitlich gedacht.
-        </h2>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <p data-de="Unser Fokus liegt auf der Gestaltung exklusiver Außenbereiche: stilvolle Terrassen, anspruchsvolle Pflasterarbeiten, Mauern und Treppen, Poolanlagen und ganzheitliche Gartenkonzepte. Ergänzt durch professionelle Pflanzarbeiten, automatisierte Bewässerung, Dachbegrünung und langfristige Pflege – ein Team, eine Baustelle, ein fertiger Garten."
-           data-en="Our focus is the design of exclusive outdoor spaces: stylish terraces, demanding paving work, walls and steps, pool installations and holistic garden concepts. Complemented by professional planting, automated irrigation, green roofing and long-term care — one team, one site, one finished garden.">
-          Unser Fokus liegt auf der Gestaltung exklusiver Außenbereiche: stilvolle Terrassen, anspruchsvolle Pflasterarbeiten, Mauern und Treppen, Poolanlagen und ganzheitliche Gartenkonzepte. Ergänzt durch professionelle Pflanzarbeiten, automatisierte Bewässerung, Dachbegrünung und langfristige Pflege – ein Team, eine Baustelle, ein fertiger Garten.
-        </p>
-        <a href="leistungen.html" class="btn" style="margin-top:24px;">
-          <span data-de="Unsere Leistungen" data-en="Our services">Unsere Leistungen</span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PROCESS -->
 <section class="section" style="background: var(--bg-2); padding: clamp(100px, 12vw, 180px) 0;" data-screen-label="Prozess">
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 80px; flex-wrap: wrap; gap: 40px;">
       <div class="reveal">
-        <div class="eyebrow" data-de="03 — Prozess" data-en="03 — Process">03 — Prozess</div>
+        <div class="eyebrow" data-de="02 — Prozess" data-en="02 — Process">02 — Prozess</div>
         <h2 style="margin-top:24px; max-width: 16ch;"
             data-de="Vier Schritte vom Gespräch zum Garten."
             data-en="Four steps from conversation to garden.">
