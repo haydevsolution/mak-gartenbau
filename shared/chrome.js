@@ -65,7 +65,7 @@
           <h4>Kontakt</h4>
           <ul>
             <li>MAK Garten- und Landschaftsbau</li>
-            <li>Mehmet Karagözlu</li>
+            <li>Mehmet Karagözlü</li>
             <li>Körnle 63</li>
             <li>71364 Winnenden</li>
             <li><a href="tel:+4917631486929">+49 176 314 869 29</a></li>
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 MAK Garten- und Landschaftsbau · Mehmet Karagözlu</span>
+        <span>© 2026 MAK Garten- und Landschaftsbau · Mehmet Karagözlü</span>
         <span>
           <a href="impressum.html">Impressum</a>
           &nbsp;·&nbsp;
